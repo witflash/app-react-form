@@ -1,0 +1,159 @@
+$delay: 300ms;
+
+.todo {
+  margin: 0 auto;
+  padding-top: 30px;
+  max-width: 300px;
+  font-size: 1.25rem;
+  color: black;
+
+  &__block {
+    margin-bottom: 50px;
+  }
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    display: block;
+    position: relative;
+    top: 0;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 1.25rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 2px solid gray;
+    transition: $delay;
+    &:focus {
+      top: -4px;
+      outline: none;
+      border: 2px solid skyblue;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__input-search {
+    display: block;
+    margin-left: auto;
+    padding: 0.5em;
+    width: 25%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-align: center;
+    border: 1px solid lightgray;
+    transition: $delay;
+    &:focus {
+      width: 100%;
+      outline: none;
+      border: 1px solid skyblue;
+    }
+  }
+
+  &__list {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item-wrap {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    transition: $delay ease-in-out;
+  }
+
+  &__item {
+    position: relative;
+    border-bottom: 1px solid gray;
+    transition-duration: $delay;
+    &.edit {
+      .todo__item-wrap {
+        opacity: 0;
+      }
+      .todo__edit {
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+        left: 0;
+        font-size: 1.375rem;
+      }
+    }
+    &.destroy {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__title {
+    position: relative;
+    flex: 1 0 auto;
+    padding: 0.5em 1em;
+    text-align: left;
+    user-select: none;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0.5em;
+      width: 0;
+      height: 2px;
+      background-color: lightgray;
+      transition: $delay;
+    }
+  }
+
+  &__toggle:checked ~ &__title {
+    text-decoration: line-through;
+    color: lightgray;
+    &::before {
+      width: calc(100% - 0.5em);
+    }
+  }
+
+  &__remove {
+    margin-left: 10px;
+  }
+
+  &__edit {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 2.1em;
+    bottom: 0;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    width: 0;
+    height: 0;
+    text-align: left;
+    color: darkblue;
+    font-size: 1.25rem;
+    background-color: white;
+    transition: $delay ease-in-out;
+    &:focus {
+      outline: none;
+      border: 2px solid skyblue;
+      border-radius: 4px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  &__deleted {
+    margin-bottom: 5px;
+    color: dimgray;
+  }
+}

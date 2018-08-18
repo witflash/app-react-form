@@ -1,0 +1,77 @@
+{
+  "form-fields": [
+    {
+      "id": 0,
+      "name": "name",
+      "tag": "input",
+      "type": "text",
+      "placeholder": "Enter any text",
+      "label": "Name",
+      "disabled": false,
+      "required": true
+    },
+    {
+      "id": 1,
+      "name": "email",
+      "tag": "input",
+      "type": "email",
+      "placeholder": "Enter email",
+      "label": "Email",
+      "disabled": false,
+      "required": false
+    },
+    {
+      "id": 2,
+      "name": "gender",
+      "tag": "select",
+      "label": "Gender",
+      "disabled": false,
+      "required": true,
+      "options": [
+        {
+          "name": "Man",
+          "value": "m"
+        },
+        {
+          "name": "Woman",
+          "value": "w"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "phones",
+      "array": true,
+      "arrayFields": [
+        {
+          "id": 1,
+          "name": "phone",
+          "tag": "input",
+          "type": "text",
+          "placeholder": "Enter phone",
+          "label": "Phone",
+          "disabled": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "message",
+      "tag": "textarea",
+      "label": "Message",
+      "rows": 4,
+      "disabled": false,
+      "required": false
+    },
+    {
+      "id": 5,
+      "name": "agree",
+      "tag": "input",
+      "type": "checkbox",
+      "label": "I agree with the term",
+      "value": true,
+      "required": true
+    }
+  ]
+}
